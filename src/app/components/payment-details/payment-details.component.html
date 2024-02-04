@@ -1,0 +1,39 @@
+
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Loan Payment Details</h2>
+          <div>
+            <button class="button-create" (click)="navigateToPaymentHistory()">Payment History</button>
+          </div>
+          <br>
+          <div *ngIf="payments && user">
+            <div class="increased-size" >
+              <p><strong>Last Payment Date:</strong> {{ formatTimestamp(payments.paymentDate.toString()) }}</p>
+              <p><strong>Payment Amount:</strong> {{ payments.paymentAmount | number:'1.2-2' }}</p>
+              <p><strong>Loan Balance:</strong> {{ payments.loanBalance | number:'1.2-2' }}</p>
+            </div>
+            <br>
+            <!-- <button mat-raised-button color="primary" (click)="onUpdate()">Update</button>
+            <button mat-raised-button color="warn" (click)="onDelete()">Delete</button> -->
+          </div>
+
+          <div *ngIf="user">
+            <app-payment-update [paymentId]="paymentId" [loanId]="loanId"></app-payment-update>
+          </div>
+
+          <div *ngIf="!payment">
+            <p>Payment not found.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+

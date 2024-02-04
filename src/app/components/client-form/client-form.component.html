@@ -1,0 +1,59 @@
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Add Client</h2>
+          <button class="button-cancel" routerLink="/clients">Cancel</button>
+          <form [formGroup]="addClientForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Phone</mat-label>
+              <input matInput formControlName="phone" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="address" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Photo Url</mat-label>
+              <input matInput formControlName="photoUrl" />
+            </mat-form-field>
+
+            <div>
+              <mat-label class="upload-input">Upload Photo</mat-label>
+              <input class="select-photo" type="file" (change)="onFileSelected($event)" accept="image/*">
+            </div>
+            <div *ngIf="uploadPercent !== undefined">
+              Uploading: {{ uploadPercent }}%
+            </div>
+            <div>
+              <img *ngIf="imageUrl" [src]="imageUrl" alt="Client Photo" style="max-width: 100%;">
+            </div>
+            <button class="button-create" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+

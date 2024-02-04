@@ -1,0 +1,45 @@
+<div class="main-container">
+  <div class="login-container">
+    <div class="sub-container">
+      <div class="container text-center p-5 mt-5">
+        <div>
+          <img src="../../assets/img/kwickkapploan.png"  alt="logo" height="100px">
+        </div>
+        <h2 class="display-4">Loan
+          <i class="fa fa-angle-double-up text-success" aria-hidden="true"></i>
+          Management App</h2>
+      </div>
+      <h2>Login</h2>
+      <div class="login-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-card class="card-custom">
+            <mat-card-header>
+              <mat-card-title></mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="card-content-custom">
+              <mat-form-field class="input-container">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email">
+              </mat-form-field>
+              <mat-form-field class="input-container">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Enter your password" formControlName="password">
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+          <br>
+          <br>
+          <div>
+            <button class="button-login" mat-raised-button color="primary" type="submit">Login</button>
+          </div>
+          <br>
+          <br>
+          <div class="mt-5">
+            <button type="submit" class="text-success text-decoration-none" routerLink="/signUp">Not Registered!, Sign Up Now!</button>
+            <br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

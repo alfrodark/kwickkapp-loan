@@ -1,0 +1,24 @@
+<!-- src/app/edit-loan-payment-dialog/edit-loan-payment-dialog.component.html -->
+<h2 mat-dialog-title>Edit Loan Payment</h2>
+<div mat-dialog-content>
+  <form [formGroup]="loanPaymentForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput formControlName="paymentAmount" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Payment Date</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Payment Date" formControlName="paymentDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Add other form controls as needed -->
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button type="submit" [disabled]="loanPaymentForm.invalid">Update</button>
+    </div>
+  </form>
+</div>

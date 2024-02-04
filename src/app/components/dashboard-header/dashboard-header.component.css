@@ -1,0 +1,19 @@
+/* header.component.css */
+div {
+  background-color: rgb(19, 13, 14);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #e74c3c;
+  color: white;
+  border:rgb(160, 148, 150);
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}

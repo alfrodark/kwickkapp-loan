@@ -1,0 +1,104 @@
+.client-details-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  border-color: #727472;
+}
+
+button {
+  padding: 10px;
+  background-color: #c87aca;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.button-list{
+  padding: 10px;
+  background-color: rgb(197, 86, 188);
+  color: white;
+  border: red;
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav{
+  font-size: larger;
+}
+
+.client-list-container {
+  max-width: max-content;
+  margin: auto;
+  padding: 10px;
+}
+
+.main-container {
+  padding: 10px;
+  border-radius: 20px;
+  text-align: justify;
+  background-color: rgb(216, 204, 207);
+}
+
+.list-container{
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 23px;
+  text-align:justify;
+  margin: 10px;
+  border-color: rgb(68, 14, 14);
+  background-color: rgb(248, 236, 236);
+}
+
+.card-content-custom {
+  max-width: 100%;
+  color: rgb(2, 2, 46);
+  font-size: 22px;
+  overflow: hidden;
+  height: auto;
+  display: block;
+}
+
+.card-custom {
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.photo-size{
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.custom-icon {
+  font-size: 25px;
+  color: #ff0000;
+
+}
+
+button:hover {
+  background-color: rgb(241, 239, 145);
+  color: black;
+}
+
+.add-button{
+  margin-left: 50px;
+  padding: 10px;
+  background-color: rgb(71, 223, 78);
+  color: white;
+  border: black;
+  border-bottom: #ff0000;
+  font-size: large;
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,78 @@
+<div class="main-container">
+  <div class="loan-details-container">
+    <h1>Loan Details</h1>
+    <div class="nav">
+      <nav>
+        <button class="button-list" mat-raised-button color="accent" routerLink="/client-details/{{clientId}}">Client Details</button>
+        <!-- <button class="button-list" mat-raised-button color="primary" (click)="navigateToPaymentForm()">Payment Form</button> -->
+        <button class="update-button" mat-raised-button color="primary" (click)="navigateToPaymentList()">Payment List</button>
+        <button class="button-list" mat-raised-button color="accent" (click)="navigateToPaymentHistory()">Payment History</button>
+      </nav>
+    </div>
+  <div class="list-container">
+    <div class="loan-details-container">
+      <div *ngIf="loans">
+        <mat-card class="card-custom">
+          <mat-card-header>
+            <mat-card-title><strong>Client ID: {{ loans.clientId }}</strong></mat-card-title>
+            <mat-card-title><strong>Loan ID: {{ loans.loanId }}</strong></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content-custom">
+            <p><strong>Loan Amount: </strong>{{ loans.loanAmount | number:'1.2-2'  }}</p>
+            <p><strong>Total Loan Payments:</strong> {{ totalLoanPayments | number:'1.2-2' }}</p>
+            <p><strong>Loan Balance: </strong>{{ loans.loanBalance | number:'1.2-2'  }}</p>
+            <p><strong>Loan Type: </strong>{{ loans.loanType }}</p>
+            <p><strong>Interest Rate: </strong>{{ loans.interestRate }}</p>
+            <p><strong>Interest Payments: </strong>{{ loans.interestPayments | number:'1.2-2'  }}</p>
+            <p><strong>Monthly Payments: </strong>{{ loans.monthlyPayments | number:'1.2-2'  }}</p>
+            <p><strong>Future Value: </strong>{{ loans.futureValue | number:'1.2-2'  }}</p>
+            <p><strong>Duration: </strong>{{ loans.periods }}</p>
+            <p><strong>Date Created: </strong>{{ formatTimestamp(loans.date.toString()) | date }}</p>
+
+          </mat-card-content>
+        </mat-card>
+        <br>
+        <div *ngIf="user">
+          <app-payment-form [loanId]="loans.loanId" [clientId]="loans.clientId" ></app-payment-form>
+        </div>
+        <br>
+        <div *ngIf="user">
+          <app-payment-list [loanId]="loanId" ></app-payment-list>
+        </div>
+
+      </div>
+    <ng-template #loading>
+      <p>Loading Loan details...</p>
+    </ng-template>
+  </div>
+
+  <div class="list-container">
+    <div class="loan-details-container">
+      <div class="card-custom">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><h3>Payment Information</h3></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content-custom">
+            <div *ngIf="loanDetails">
+              <h3>Loan Payment Details</h3>
+              <p>Initial Loan Amount: {{ loanDetails.loanAmount | number:'1.2-2' }}</p>
+              <p>Loan Balance: {{ newBalance$ | number:'1.2-2' }}</p>
+
+              <h3>Payments</h3>
+              <ul>
+                <li *ngFor="let payment of payments">
+                  {{ payment.paymentAmount | number:'1.2-2' }} paid on {{ formatTimestamp(payment.paymentDate.toString()) | date }}
+                </li>
+              </ul>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<router-outlet></router-outlet>

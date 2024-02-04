@@ -1,0 +1,111 @@
+.client-form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+
+}
+
+.main-container {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: large;
+  text-align: justify;
+  background-color: rgb(230, 225, 225);
+}
+
+.sub-container{
+  border-radius: 10px;
+  padding-left: 30px;
+  text-align: justify;
+  font-size: larger;
+  background-color: white;
+  align-content: center;
+}
+
+.increased-size {
+  font-size: larger;
+  border-radius: 20px;
+  border-color: rgb(236, 61, 113);
+ }
+
+ form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  color: black;
+
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  padding: 3px;
+  margin-bottom: 2px;
+}
+
+.button-update {
+  padding: 10px;
+  background-color: #b659b6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+}
+
+.button-cancel {
+  padding: 10px;
+  background-color: rgb(233, 77, 77);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.photo-upload {
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.upload-input{
+  font-size: large;
+  margin-left: 5px;
+}
+
+.select-photo{
+  font-size: large;
+  margin-left: 20px;
+  border-radius: 15px;
+}
+
+.card-content-custom {
+  width: 100%;
+  color: blue;
+  font-size: 18px;
+
+}
+
+.card-custom {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.input-container {
+  max-width: 450px;
+  display: block;
+  margin-bottom: 5px;
+}

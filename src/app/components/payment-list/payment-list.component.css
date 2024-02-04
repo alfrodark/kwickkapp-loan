@@ -1,0 +1,179 @@
+.loan-list-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-container {
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: justify;
+  background-color: rgb(216, 204, 207);
+}
+
+.list-container{
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: large;
+  text-align: center;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #e0e0e0;
+}
+
+button {
+  background-color: #c4a3db;
+  color: rgb(10, 6, 6);
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(241, 239, 145);
+  color: black;
+}
+
+.delete-button{
+  background-color: rgb(235, 34, 44);
+  color: white;
+  padding: 8px;
+  font-size: small;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button{
+  padding: 10px;
+  background-color: rgb(71, 223, 78);
+  color: white;
+  border: black;
+  border-bottom: #ff0000;
+  font-size: large;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dashboard-button{
+  padding: 10px;
+  margin-left: 10px;
+  background-color: rgb(132, 203, 224);
+  color: white;
+  border: black;
+  border-bottom: #ff0000;
+  font-size: large;
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+table {
+  max-width: 100%;
+}
+
+button {
+  margin-right: 8px;
+}
+
+.table-head{
+  background-color: #eee9e9;
+}
+
+.delete-icon{
+  background-color: red;
+}
+
+.custom-icon {
+  font-size: 25px;
+  color: #ff0000;
+
+}
+
+.mat-cell {
+  font-size: larger;
+  color: black;
+  background-color: #f5ebeb;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mat-header-cell {
+  font-size:x-large;
+  color: black;
+  font-weight:bolder;
+  justify-content: center;
+
+}
+
+.mat-table {
+  font-size: larger;
+  color: black;
+}
+
+.mat-cell,
+.mat-header-cell {
+  font-size: larger;
+  color: black;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.page-title{
+  color: rgb(240, 22, 131);
+}
+
+.mat-cell {
+  font-size: larger;
+  color: black;
+  background-color: #f5ebeb;
+  border-width: 1px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mat-header-cell {
+  font-size:x-large;
+  color: black;
+  font-weight:bolder;
+  border-width: 1px;
+  border-color: #1e1f1e;
+  justify-content: center;
+
+}
+
+.mat-table {
+  font-size: larger;
+  color: black;
+}
+
+.mat-cell,
+.mat-header-cell {
+  font-size: larger;
+  color: black;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.page-title{
+  color: rgb(240, 22, 131);
+}

@@ -1,0 +1,52 @@
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <button class="button-cancel" routerLink="/clients">Cancel</button>
+        <div>
+          <h3>Loan Update</h3>
+          <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+            <mat-card class="card-custom">
+              <mat-card-header>
+                <mat-card-title><h3>Update Loan</h3></mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="card-content-custom">
+                <mat-form-field class="input-container">
+                  <mat-label>Loan Amount</mat-label>
+                  <input matInput placeholder="Loan Amount" formControlName="loanAmount" />
+                </mat-form-field>
+
+                <mat-form-field class="input-container">
+                  <mat-label>Interest Rate</mat-label>
+                  <input matInput placeholder="Interest Rate" formControlName="interestRate" />
+                </mat-form-field>
+
+                <mat-form-field class="input-container">
+                  <mat-label>Periods</mat-label>
+                  <input matInput placeholder="Periods" formControlName="periods" />
+                </mat-form-field>
+
+                <div>
+                  <h3><strong>Calculated Interest Amount: </strong>{{ loanForm.value.calculatedInterestAmount }}</h3>
+                </div>
+                <div>
+                  <h3><strong>Future Value: </strong>{{ loanForm.value.futureValue }}</h3>
+                </div>
+                <div>
+                  <h3><strong>Monthly Payments: </strong>{{ loanForm.value.monthlyPayments }}</h3>
+                </div>
+              </mat-card-content>
+
+              <mat-card-actions>
+                <button class="button-update" mat-raised-button color="accent" type="submit">Update</button>
+              </mat-card-actions>
+            </mat-card>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

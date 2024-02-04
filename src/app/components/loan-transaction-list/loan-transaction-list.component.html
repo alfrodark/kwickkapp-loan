@@ -1,0 +1,5 @@
+<!-- loan-transaction-list.component.html -->
+<div *ngFor="let transaction of transactions">
+  <p>{{ transaction.amount }} - {{ transaction.type }} - {{ transaction.date | date }}</p>
+  <button (click)="onDelete(transaction.transactionId)">Delete</button>
+</div>

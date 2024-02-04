@@ -1,0 +1,88 @@
+.client-form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-container {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: large;
+  text-align: justify;
+  background-color: rgb(230, 225, 225);
+}
+
+.sub-container{
+  border-radius: 10px;
+  text-align: justify;
+  background-color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  padding: 3px;
+  margin-bottom: 3px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.increased-size {
+  font-size: large;
+  border-radius: 20px;
+  border-color: rgb(236, 61, 113);
+  width: 250px;
+ }
+
+ .button-create {
+  padding: 10px;
+  background-color: #b659b6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+}
+
+.button-cancel {
+  padding: 10px;
+  background-color: rgb(233, 77, 77);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+}
+
+.button-upload{
+  padding: 10px;
+  background-color: #69b659;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+}

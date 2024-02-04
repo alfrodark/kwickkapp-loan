@@ -1,0 +1,22 @@
+.header{
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer{
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  padding: 1px;
+}

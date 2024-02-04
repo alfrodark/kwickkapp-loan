@@ -1,0 +1,91 @@
+<div class="main-container">
+  <div class="client-details-container">
+    <h1>Client Details</h1>
+    <div class="nav">
+      <nav>
+        <button class="button-list" mat-raised-button color="primary" routerLink="/clients">View Client List</button>
+        <!-- <button class="add-button" mat-raised-button color="accent" [routerLink]="['/loans/new']">Create Loan</button> -->
+      </nav>
+    </div>
+  <div class="list-container">
+    <div class="client-details-container">
+      <div *ngIf="client$">
+        <mat-card class="card-custom">
+          <mat-card-header>
+            <mat-card-title>{{ client$.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content-custom">
+            <p>Photo:</p>
+            <img class="photo-size" *ngIf="client$.photoUrl" [src]="client$.photoUrl" alt="Client Photo">
+            <div>
+              <strong>Name:</strong> {{ client$.name }}
+            </div>
+            <div>
+              <strong>Email:</strong> {{ client$.email }}
+            </div>
+            <div>
+              <strong>Phone:</strong> {{ client$.phone }}
+            </div>
+            <div>
+              <strong>Address:</strong> {{ client$.address }}
+            </div>
+            <div>
+              <strong>City:</strong> {{ client$.city }}
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    <ng-template #loading>
+      <p>Loading client details...</p>
+    </ng-template>
+  </div>
+
+</div>
+<div class="list-container">
+  <div class="client-details-container">
+    <div class="card-custom">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h3>Loan Information</h3></mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content-custom">
+          <div *ngIf="user">
+            <app-loan-form [clientId]="clientId"></app-loan-form>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="user">
+  <app-loan-list [clientId]="clientId"></app-loan-list>
+</div>
+
+
+
+<!-- <div class="list-container">
+  <div class="client-details-container">
+    <div class="card-custom">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h3>Loan Information</h3></mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content-custom">
+          <div *ngIf="user">
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div> -->
+
+</div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+<header>
+  <div *ngIf="userData">
+    <h2>Welcome, {{ userData.name }}!</h2>
+    <h2>Loan Management App</h2>
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+
+

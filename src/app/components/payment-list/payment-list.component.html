@@ -1,0 +1,62 @@
+<div class="main-container">
+  <div class="loan-list-container">
+    <div>
+      <button class="dashboard-button" mat-raised-button color="accent" routerLink="/dashboard">Dashboard</button>
+      <button class="add-button" mat-raised-button color="accent" (click)="navigateToPaymentHistory()">Payment History</button>
+    </div>
+    <br>
+    <h3>Loan Payment List</h3>
+    <div class="mat-elevation-z2">
+      <div *ngIf="payments && payments.length > 0; else noPayments">
+        <table mat-table [dataSource]="payments" class="mat-elevation-z8">
+          <!-- Payment Date Column -->
+          <ng-container matColumnDef="paymentDate">
+            <th class="mat-header-cell" mat-header-cell *matHeaderCellDef> Payment Date </th>
+            <td class="mat-cell" mat-cell *matCellDef="let payment; let i = index"> {{ formatTimestamp(payment.paymentDate.toString()) }} </td>
+          </ng-container>
+
+          <!-- Payment Amount Column -->
+          <ng-container matColumnDef="paymentAmount">
+            <th class="mat-header-cell" mat-header-cell *matHeaderCellDef> Payment Amount </th>
+            <td class="mat-cell" mat-cell *matCellDef="let payment; let i = index"> {{ payment.paymentAmount | number:'1.2-2' }} </td>
+          </ng-container>
+
+          <!-- Loan Balance Column -->
+          <ng-container matColumnDef="loanBalance">
+            <th class="mat-header-cell" mat-header-cell *matHeaderCellDef> Payment ID </th>
+            <td class="mat-cell" mat-cell *matCellDef="let payment; let i = index" > {{ payment.paymentId }} </td>
+          </ng-container>
+
+          <!-- Delete Column -->
+          <ng-container matColumnDef="delete">
+            <th class="mat-header-cell" mat-header-cell *matHeaderCellDef> Action </th>
+            <td class="mat-cell" mat-cell *matCellDef="let payment">
+              <button mat-icon-button routerLink="/payment-details/{{ payment.loanId }}/{{ payment.id }}">
+                <mat-icon matTooltip="View Payment Details" matTooltipPosition="above" matTooltipShowDelay="1000" matTooltipHideDelay="500">visibility</mat-icon>
+              </button>
+              <button mat-icon-button routerLink="/update-payments/{{ payment.loanId }}/{{ payment.id }}">
+                <mat-icon matTooltip="Update Loan" matTooltipPosition="above" matTooltipShowDelay="1000" matTooltipHideDelay="500">edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deletePayment(payment.id)">
+                <mat-icon matTooltip="Delete Payment" matTooltipPosition="above" matTooltipShowDelay="1000" matTooltipHideDelay="500" class="custom-icon">delete</mat-icon>
+              </button>
+              <!-- <button mat-icon-button color="warn" (click)="deletePayment(payment.paymentId)">
+                <mat-icon>delete</mat-icon>
+              </button> -->
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="['paymentDate', 'paymentAmount', 'delete']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['paymentDate', 'paymentAmount', 'delete']"></tr>
+        </table>
+      </div>
+
+      <ng-template #noPayments>
+        <p>No payments available.</p>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
+
+

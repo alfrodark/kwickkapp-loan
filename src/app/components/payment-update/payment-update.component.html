@@ -1,0 +1,43 @@
+
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Make Payment Update</h2>
+          <button class="button-cancel" routerLink="/clients">Cancel</button>
+          <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>Payment Amount</mat-label>
+              <input matInput placeholder="Payment Amount" formControlName="paymentAmount" />
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill">
+              <mat-label>Payment Date</mat-label>
+              <input matInput placeholder="Payment Date" formControlName="paymentDate" />
+            </mat-form-field> -->
+
+            <mat-form-field appearance="fill">
+              <input matInput [matDatepicker]="picker" placeholder="Payment Update Date" formControlName="paymentDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill">
+              <mat-label>Loan Balance</mat-label>
+              <input matInput placeholder="Loan Balance" formControlName="loanBalance" />
+            </mat-form-field> -->
+
+             <br>
+            <button class="button-create" mat-raised-button color="accent" type="submit">Update Payment</button>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+

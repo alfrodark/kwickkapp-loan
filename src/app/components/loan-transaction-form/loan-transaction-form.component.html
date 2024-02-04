@@ -1,0 +1,26 @@
+<!-- loan.component.html -->
+<div *ngFor="let loan of loans" >
+  <h3>{{ loan.id }}</h3>
+  <p>Remaining Balance: ${{ remainingBalance }}</p>
+  <div *ngFor="let payment of loan.payments">
+    <p>Payment #{{ payment.paymentNumber }} - Amount: ${{ payment.paymentAmount }} - Date: {{ payment.paymentDate }}</p>
+  </div>
+</div>
+
+<div *ngIf="selectedLoan">
+  <h4>Loan Details</h4>
+  <!-- Display selected loan details -->
+
+  <h4>Payments</h4>
+  <div *ngFor="let payment of selectedLoan.payments">
+    <!-- Display payment details -->
+  </div>
+
+  <h4>Add Payment</h4>
+  <form>
+    <label for="paymentAmount">Payment Amount:</label>
+    <input type="number" id="paymentAmount" name="paymentAmount" [(ngModel)]="paymentAmount" required>
+    <button mat-raised-button (click)="addPayment(paymentAmount)">Add Payment</button>
+  </form>
+</div>
+

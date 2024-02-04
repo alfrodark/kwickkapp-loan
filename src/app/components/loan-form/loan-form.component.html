@@ -1,0 +1,54 @@
+
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Create Loan</h2>
+          <button class="button-cancel" routerLink="/clients">Cancel</button>
+          <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>Loan Amount</mat-label>
+              <input matInput placeholder="Loan Amount" formControlName="loanAmount" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Interest Rate</mat-label>
+              <input matInput placeholder="Interest Rate" formControlName="interestRate" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Periods</mat-label>
+              <input matInput placeholder="Periods" formControlName="periods" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select Loan Type</mat-label>
+              <mat-select formControlName="loanType" (selectionChange)="onSelectionChange($event)">
+                <mat-option value="Personal Loan">Personal Loan</mat-option>
+                <mat-option value="Car Financing">Car Financing</mat-option>
+                <mat-option value="Credit Card">Credit Card</mat-option>
+                <mat-option value="Furniture Loan">Furniture Loan</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- <p>Selected Value: {{ loanForm.get('loanType')?.value }}</p> -->
+
+            <!-- Display calculated fields -->
+            <div>
+              <h3><strong>Calculated Interest Amount: </strong>{{ loanForm.value.calculatedInterestAmount }}</h3>
+              <h3><strong>Future Value: </strong>{{ loanForm.value.futureValue }}</h3>
+              <h3><strong>Monthly Payments: </strong>{{ loanForm.value.monthlyPayments }}</h3>
+              <h3><strong>Interest Payments: </strong>{{ loanForm.value.interestPayments }}</h3>
+            </div>
+             <br>
+            <button class="button-create" mat-raised-button color="primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
